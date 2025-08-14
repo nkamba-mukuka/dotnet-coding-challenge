@@ -7,7 +7,7 @@ The objective of this challenge is to create an API that manages customers and t
 
 ## Requirements
 
-1. You must use .NET Core (Version 8.0) and C#
+1. You must use .NET Core (Version 8.0 or newer) and C#
 2. The API must consume and return JSON data
 3. The GET API should utilize the following OData parameters to query data 
     - $select
