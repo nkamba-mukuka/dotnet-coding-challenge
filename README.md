@@ -94,3 +94,30 @@ The application must expose two RESTful API endpoints providing standard CRUD fu
 - The API should return plausible HTTP codes
 
 We will not provide a strict time limit, but we recommend to spend between 2-6 hours. Please clone this repository and push your results to a private repo when you are ready to share your work with us. 
+
+
+SOLUTION How a Request Would Flow (Once Fully Built):
+
+Client (browser, Postman, etc.)
+    │
+    │  HTTP request: GET /api/Customer/abc-123/User
+    ▼
+Program.cs
+    │  Routes request to the right controller
+    ▼
+UserController.List(customerId: "abc-123")
+    │
+    │  Calls a service or DbContext
+    ▼
+EF Core (DbContext) — not built yet
+    │
+    │  Runs SQL against SQLite
+    ▼
+SQLite Database — not set up yet
+    │
+    │  Returns User rows where CustomerId = abc-123
+    ▼
+UserController
+    │  Maps entities to JSON DTOs
+    ▼
+Client receives JSON response
